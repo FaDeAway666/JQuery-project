@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slidorion</title>
+    <link rel="stylesheet" href="../手风琴/css/slidorion.css">
+</head>
+
+<body>
+    <ul class="slidorion">
+        <li class="has-children">
+            <label>Group1</label>
+            <ul>
+                <li class="has-children">
+                    <label> sub Group1</label>
+                    <ul>
+                        <li>
+                            <label>sub Group1 level2</label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="has-children">
+            <label>Group2</label>
+            <ul>
+                <li class="has-children">
+                    <label> sub Group2</label>
+                    <ul>
+                        <li>
+                            <label>sub Group2 level2</label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label>Group3</label>
+        </li>
+        <li>
+            <label>Group4</label>
+        </li>
+    </ul>
+</body>
+<script src="../jquery-2.0.0/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.slidorion').show();
+    })
+    $('.has-children').append('<div class="arrow"></div>')
+    $('.has-children>label').on('click', function () {
+        var left = $(this).innerWidth() - $(this).width();
+        $(this).siblings('.arrow').toggleClass('after-click');
+        $(this).next('ul').find('label').css('padding-left', left + 20 + 'px');
+        $(this).next('ul').find('.arrow').css('left', left + 'px');
+        $(this).next('ul').toggle().toggleClass('sub-sli');
+    })
+</script>
+
+</html>

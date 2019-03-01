@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+body ul {
+  display: none;
+  list-style: none;
+  padding-inline-start: 0;
+}
+.slidorion {
+  width: 500px;
+  margin: 20px auto;
+}
+.slidorion li {
+  margin-bottom: 1px;
+  position: relative;
+}
+.slidorion li label {
+  display: block;
+  color: #fff;
+  padding: 20px 0 20px 40px;
+  background-color: #555960;
+}
+.slidorion .after-click {
+  transform: translateY(-50%) rotate(90deg);
+  top: 30px !important;
+}
+.slidorion .has-children .arrow {
+  content: '';
+  left: 20px;
+  top: 22px;
+  position: absolute;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../images/手风琴/icons.png);
+  background-repeat: no-repeat;
+  background-position: -10px -46px;
+}
+.slidorion .sub-sli {
+  display: none;
+}
+.slidorion .sub-sli li {
+  margin-bottom: 1px;
+}
+.slidorion .sub-sli label {
+  display: block;
+  color: #fff;
+  padding: 20px 0 20px 40px;
+  background-color: #35383d;
+  box-shadow: inset 0 -1px #41444a;
+}
